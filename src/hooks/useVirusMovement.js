@@ -10,7 +10,7 @@ export const useVirusMovement = (gameState, virusPos, setVirusPos, setVirusTrail
     if (gameState !== 'playing') return;
     
     const now = Date.now();
-    if (now - lastMoveTime.current < 80) return;
+    if (now - lastMoveTime.current < 60) return;
     
     setVirusPos(prev => {
       let newX = prev.x;

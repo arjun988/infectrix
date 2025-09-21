@@ -1,10 +1,10 @@
 import React from 'react';
 import InfectrixGame from './components/InfectrixGame';
-import {Analytics} from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 
 function App() {
-  <Analytics />
+           <Analytics />
   return <InfectrixGame />;
 }
 

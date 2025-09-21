@@ -90,7 +90,7 @@ const InfectrixGame = () => {
   // Game loop
   useGameLoop(
     gameState,
-    120, // gameSpeed
+    80, // gameSpeed
     moveVirus,
     handleInfection,
     moveAntiviruses,

@@ -71,9 +71,6 @@ export const useGameState = () => {
       "ERROR: Unauthorized access detected",
       "WARNING: Containment breach in progress",
       "Subject INFECTRIX has escaped laboratory",
-      "Viral payload activated",
-      "Emergency protocols engaged",
-      "Antivirus agents deployed",
       "Network compromised...",
       "SURVIVE. SPREAD. EVOLVE."
     ];
