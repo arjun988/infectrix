@@ -7,7 +7,7 @@ import { useGameLoop } from '../hooks/useGameLoop';
 import { useKeyboardControls } from '../hooks/useKeyboardControls';
 import { useGameLogic } from '../hooks/useGameLogic';
 import { useMobileControls } from '../hooks/useMobileControls';
-
+import { Analytics } from '@vercel/analytics/react';
 // UI Components
 import StoryScreen from './ui/StoryScreen';
 import GameOverScreen from './ui/GameOverScreen';
@@ -135,7 +135,9 @@ const InfectrixGame = () => {
 
   // Main game screen
   return (
+    
     <div className="game-container">
+    <Analytics/>
       <GameHUD
         score={score}
         infectedCount={infectedCount}
