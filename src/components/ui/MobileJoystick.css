@@ -1,0 +1,65 @@
+.mobile-joystick-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: none; /* Hidden by default, shown on mobile */
+}
+
+.joystick-base {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.1));
+  border: 2px solid #00ff00;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joystick-knob {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ff00, #00cc00);
+  border: 2px solid #ffff00;
+  position: absolute;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+.joystick-base:active .joystick-knob {
+  transform: scale(1.1);
+}
+
+/* Show joystick on mobile devices */
+@media (max-width: 768px) {
+  .mobile-joystick-container {
+    display: block;
+  }
+  
+  .joystick-base {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .joystick-knob {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .joystick-base {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .joystick-knob {
+    width: 30px;
+    height: 30px;
+  }
+}

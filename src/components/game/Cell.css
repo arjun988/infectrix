@@ -1,0 +1,166 @@
+.cell {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.cell.virus {
+  background: radial-gradient(circle, #ff0000 0%, #cc0000 70%, #990000 100%);
+  animation: virusGlow 1s infinite ease-in-out;
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+
+.cell.antivirus {
+  background: radial-gradient(circle, #0099ff 0%, #0066cc 70%, #003399 100%);
+  animation: antivirusMove 0.5s ease-in-out;
+  border-radius: 50%;
+  border: 2px solid #00ccff;
+}
+
+.cell.infected {
+  background: radial-gradient(circle, #00ff00 0%, #00cc00 70%, #009900 100%);
+  animation: infectedSpread 2s infinite;
+}
+
+.cell.normal {
+  background: linear-gradient(45deg, #333 0%, #444 100%);
+  border: 1px solid #555;
+}
+
+.cell.immune {
+  background: linear-gradient(45deg, #666 0%, #777 50%, #555 100%);
+  border: 2px solid #999;
+}
+
+.cell.superspreader {
+  background: radial-gradient(circle, #ffff00 0%, #ffcc00 70%, #ff9900 100%);
+  animation: superGlow 1.5s infinite;
+  border: 2px solid #ffff00;
+}
+
+.cell.empty {
+  background: #111;
+}
+
+.cell.virus-trail {
+  background: radial-gradient(circle, rgba(255,0,0,0.3), transparent) !important;
+  animation: trailFade 1s ease-out forwards;
+}
+
+.cell.infection-effect {
+  animation: infectionBurst 0.5s ease-out;
+}
+
+.cell.explosion-effect {
+  animation: explosionEffect 0.8s ease-out;
+}
+
+.cell.healing-wave {
+  animation: healingWave 1.5s ease-out;
+}
+
+@keyframes virusGlow {
+  0%, 100% { 
+    box-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255,0,0,0.5);
+    transform: scale(1.1);
+  }
+  50% { 
+    box-shadow: 0 0 25px #ff0000, 0 0 40px rgba(255,0,0,0.8);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes antivirusMove {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes infectedSpread {
+  0%, 100% { 
+    opacity: 0.9;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0,255,0,0.6);
+  }
+}
+
+@keyframes superGlow {
+  0%, 100% { 
+    box-shadow: 0 0 10px #ffff00;
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px #ffff00, 0 0 35px rgba(255,255,0,0.7);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes trailFade {
+  0% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+@keyframes infectionBurst {
+  0% { 
+    background: radial-gradient(circle, #00ff00, transparent) !important;
+    transform: scale(0.8);
+  }
+  50% {
+    background: radial-gradient(circle, #00ff00, #00aa00) !important;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes explosionEffect {
+  0% { 
+    background: radial-gradient(circle, #ffff00, transparent) !important;
+    transform: scale(0.5);
+  }
+  30% {
+    background: radial-gradient(circle, #ffff00, #ff8800) !important;
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes healingWave {
+  0% { 
+    background: radial-gradient(circle, rgba(0,153,255,0.8), transparent) !important;
+    transform: scale(1.3);
+  }
+  100% {
+    background: radial-gradient(circle, rgba(0,153,255,0), transparent) !important;
+    transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cell {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cell {
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+  }
+}

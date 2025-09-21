@@ -1,0 +1,73 @@
+.game-info {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 90vw;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.objective, .controls {
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-infected { background: #00ff00; width: 12px; height: 12px; }
+.legend-normal { background: #444; width: 12px; height: 12px; border: 1px solid #555; }
+.legend-immune { background: #666; width: 12px; height: 12px; border: 1px solid #999; }
+.legend-super { background: #ffff00; width: 12px; height: 12px; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-info {
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  .objective, .controls {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+  
+  .legend {
+    gap: 8px;
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-info {
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .objective, .controls {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+  
+  .legend {
+    gap: 5px;
+    font-size: 0.6em;
+  }
+}

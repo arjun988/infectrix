@@ -1,0 +1,49 @@
+.game-over-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #1a0000, #000000);
+  color: #ff0000;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.game-over-screen h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.stats {
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.restart-btn {
+  padding: 15px 30px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.restart-btn:hover {
+  background: #ff3333;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
